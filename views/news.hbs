@@ -1,0 +1,41 @@
+<style>
+  .button-ok {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+</style>
+<form method="POST" action="/news" style='text-align: center'>
+<fieldset>
+  <legend style="font-size: 1.2em;">News feed setup</legend>
+  <label for="select">News section: 
+    <select name="select" id="select" required>
+      <option value="vardags">Daily</option>
+      <option value="kultur">Culture</option>
+      <option value="sport">Sport</option>
+      <option value="varlden">Other world</option>
+      <option value="sverige">In Sweden</option>
+  </select>
+  </label>
+  <label for="count" style="margin: 0 2rem;">Count of news: <input id="count" type="number" max="9" min="1" name='count' placeholder="Число" title="В случае пустого поля - покажет все новости" style="width: 4rem;" value="{{ this.quantity }}"/></label>
+  <input type="submit" value="SELECT">
+</fieldset>
+</form>
+<div>
+  <h5 style='text-align: center'><a href="/">TO MAIN PAGE</a></h5>
+  <h2 style='text-align: center'> {{ this.title }} </h2><hr>
+  <h3 style='text-align: center'>Last {{ this.quantity }} news</h3><hr>
+  <section>
+    {{#each this.news}}
+      {{#lt @index ../this.quantity }}
+      <h4>{{ this.title }}</h4>
+      <p>{{ this.content }}</p>
+      <button class="button-ok">More...</button>
+      {{/lt}}
+    {{/each}}
+  </section>
+</div>
+<script>
+  select.value = `{{this.newsType}}`
+</script>

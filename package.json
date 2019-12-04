@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "ansi": "^0.3.1",
+    "cheerio": "^1.0.0-rc.3",
+    "consolidate": "^0.15.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "handlebars": "^4.5.3",
+    "handlebars-helpers": "^0.10.0",
+    "request-promise": "^4.2.5",
+    "request": "^2.88.0"
+  },
+  "name": "parsing-news-w-choice-usingexpressjs",
+  "description": "Simple parsing of news from the news portal with a form for choosing the type of news and their quantity using ExpressJS. Selection options are stored in cookies",
+  "version": "1.0.0",
+  "main": "news.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node news.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksLykov/parsing-news-w-choice-usingExpressJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AleksLykov/parsing-news-w-choice-usingExpressJS/issues"
+  },
+  "homepage": "https://github.com/AleksLykov/parsing-news-w-choice-usingExpressJS#readme"
+}
