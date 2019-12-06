@@ -21,7 +21,7 @@ app.use('/clear-cookie', (req, res, next) => {
     res.redirect(301,'/')
 })
 
-const rpReq = (meth, uriPart) => new Promise((res, rej) => {
+const rpReq = async (meth, uriPart) => new Promise((res, rej) => {
     const allNews = {}
     rp({
         method: meth,
@@ -43,7 +43,7 @@ const rpReq = (meth, uriPart) => new Promise((res, rej) => {
     })
 })
 
-app.post('/news', (req, resp) => {
+app.post('/news', async (req, resp) => {
     sortNews.type = req.body.select
     rpReq('POST', sortNews.type).then(data => {
         sortNews.count = data.quantity = req.body.count
@@ -53,13 +53,12 @@ app.post('/news', (req, resp) => {
     })
 })
 
-app.get('/news', (req, resp) => {
-    !req.body.select && req.cookies.userNews ? sortNews.type = req.cookies.userNews.type : sortNews.type = 'vardags'
-    rpReq('GET', sortNews.type).then(data => {
-        req.cookies.userNews?data.quantity = req.cookies.userNews.count:data.quantity = data.news.length
-        data.newsType = sortNews.type
-        resp.render('news', data)
-    })
+app.get('/news', async (req, resp) => {
+    req.cookies.userNews ? sortNews.type = req.cookies.userNews.type : sortNews.type = 'vardags'
+    const data = await rpReq('GET', sortNews.type)
+    req.cookies.userNews?data.quantity = req.cookies.userNews.count:data.quantity = data.news.length
+    data.newsType = sortNews.type
+    resp.render('news', data)
 })
 
 app.get('/', (req, res) => {

@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.no-under:hover {
+    text-decoration: none;
+}
+
+.container-main {
+    width: 100vw;
+    max-width: 1200px;
+    min-width: 630px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.navbar-main {
+    display: -webkit-flex;
+    display: flex;
+    padding: 1em 1rem;
+    justify-content: flex-start;
+    align-content: center;
+    background-color: #eee;
+}
+
+.menu-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    flex-grow: 1;
+    margin-top: 0.7em;
+}
+
+.menu-logo {
+    filter: brightness(1.0);
+    transition: filter ease 0.7s;
+}
+
+.menu-logo:hover {
+    filter: brightness(1.3);
+}
+
+.menu-list {
+    list-style-type: none;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-grow: 1;
+    padding-left: 1em;
+}
+
+.menu-list_item {
+    flex-basis: auto;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: lighter;
+    align-self: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.menu-list_link {
+    display: block;
+    text-decoration: none;
+    transition: transform ease 0.5s, color ease 0.5s;
+    color: #666;
+}
+.menu-list_link:hover {
+    color: #999;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.active {
+    color: #000;
+    filter: drop-shadow(0.2em 0.2em 0.3em rgba(0,0,0,0.5));
+}
+
+.main-content {
+    padding: 1em 3rem;
+    background-color: rgb(250, 250, 250);
+}
+
+.card-header:hover {
+    filter: drop-shadow(0 0 0.2em rgba(0,0,0,0.3));
+}
+
+
+.footer-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 3em;
+    background-color: #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.login-form {
+    margin: 8rem auto;
+    border: #ccc 0.05em solid;
+    width: 20em;
+    height: 16em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-radius: 0.2rem;
+}
+
+.login-logo {
+    width: 50%;
+    filter: contrast(0.3);
+    margin: 0.5rem 0; 
+}
+
+.login-input {
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: #ddd 0.05em solid;
+    background: rgba(218, 218, 218, 0.1);
+    height: 2rem;
+    width: 90%;
+    margin: 1rem 0;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+}
